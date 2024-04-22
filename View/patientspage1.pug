@@ -1,0 +1,607 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        <title> Health Consultancy</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">  
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="/static/css/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+    
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="/static/css/style.css" rel="stylesheet">    
+        link(rel="stylesheet", href="/static/css/login.css")   
+        //-link(rel="stylesheet", href="/static/css/main.css")   
+    body 
+        <!-- Navbar Start -->
+        <div class="container-fluid sticky-top bg-white shadow-sm">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+                    <a href="index.html" class="navbar-brand">
+                        <h1 class="m-0 text-uppercase text-primary"><i class="fa fa-clinic-medical me-2"></i> Health Consultancy</h1>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto py-0">
+                            <a href="/1/consultancy/patienthome" class="nav-item nav-link active">Home</a>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                                <div class="dropdown-menu m-0">
+                                    <p class="dropdown-item" onclick="openpredictpage();">Predict Disease</p>
+                                    <p class="dropdown-item" onclick="openeditmedicalhist();">Enter Medical History</p>
+                                    <p class="dropdown-item" onclick="openseemedicalhist();">See Medical History</p>
+                                    <p class="dropdown-item" onclick="openappointment12();">Get Appointment</p>
+                                    <p class="dropdown-item" onclick="openremaindeoption();">Set Reminder</p>
+                                </div>
+                            </div>
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Profile</a>
+                                <div class="dropdown-menu m-0">
+                                    <p class="dropdown-item">#{username}</p>
+                                    <p class="dropdown-item" onclick="openeditprof()">Edit</p>
+                                    <p onclick="logout23();" class="dropdown-item">Logout</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar End -->
+
+        <!--Home Content-->
+        <div class="container-fluid py-5" id="homecontent">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
+                        <div class="position-relative h-100">
+                            <img class="position-absolute w-100 h-100 rounded" src="/static/images/patienthome.jpg" style="object-fit: cover;">
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="mb-4">
+                            <h5 class="d-inline-block text-primary text-uppercase border-bottom border-5">My Home</h5>
+                            <h1 class="display-4">Best Medical Care For Yourself and Your Family</h1>
+                        </div>
+                        <p>Still many patients loose their life just because of not getting the right treatment at right time. Our aim is to save the time of patients in searching for the available treatment. We will provide a platform for the patients where they will get all the health related services in one web application. Many popular hospitals as well as small clinic and doctors are connected with us and provide 24/7 service. You can book appointment at any time of day</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--home content end-->
+        <!--Prediction Ui-->
+        <div class="container-fluid bg-primary my-5 py-5" id="predicationui" style="display:none">
+            <div class="container py-5">
+                <div class="row gx-5">
+                    <div class="col-lg-6">
+                        <div class="bg-white text-center rounded p-5">
+                            <h1 class="mb-4">Check Disease With ML</h1>                        
+                                <div class="row g-3">
+                                    <div class="col-12 col-sm-6">
+                                        select(id="symptomsoption" class="form-control bg-light border-0" style="height: 55px;")
+                                            option(value="Itching") Itching 
+                                            option(value="Skin Rash") Skin rash
+                                            option(value="Nodal Skin Eruptions") Nodal skin eruptions
+                                            option(value="Continuous Sneezing") Continuous sneezing
+                                            option(value="Shivering") Shivering
+                                            option(value="Chills") Chills
+                                            option(value="Joint Pain") Joint pain
+                                            option(value="Stomach Pain") Stomach Pain
+                                            option(value="Acidity") Acidity
+                                            option(value="Ulcers On Ongue") Ulcers on tongue
+                                            option(value="Muscle Wasting") Muscle wasting
+                                            option(value="Vomiting") vomiting
+                                            option(value="Burning Micturition") burning micturition
+                                            option(value="Spotting Urination") spotting  urination
+                                            option(value="Fatigue") fatigue
+                                            option(value="Weight Gain") weight gain
+                                            option(value="Weight Loss") weight loss
+                                            option(value="Cold Hands And Feets") cold hands and feets
+                                            option(value="Restlessness") restlessness
+                                            option(value="Mood Swings") mood swings
+                                            option(value="Lethargy") lethargy
+                                            option(value="Patches In Throat") patches in throat
+                                            option(value="Irregular Sugar Level") irregular sugar level
+                                            option(value="Cough") cough
+                                            option(value="High Fever") high fever
+                                            option(value="Sunken Eyes") sunken eyes
+                                            option(value="Breathlessness") breathlessness
+                                            option(value="Sweating") sweating
+                                            option(value="Dehydration") dehydration
+                                            option(value="Indigestion") indigestion
+                                            option(value="Headache") headache
+                                            option(value="Yellowish skin") yellowish skin
+                                            option(value="Dark urine") dark urine
+                                            option(value="Nausea") nausea
+                                            option(value="Pain Behind The Eyes") pain behind the eyes
+                                            option(value="Constipation") constipation
+                                            option(value="Abdominal Pain") abdominal pain
+                                            option(value="Diarrhoea") diarrhoea
+                                            option(value="Mild Fever") mild fever
+                                            option(value="Yellow Urine") yellow urine
+                                            option(value="Yellowing Of Eyes") yellowing of eyes
+                                            option(value="Acute Liver Failure") acute liver failure
+                                            option(value="Fluid Overload") fluid overload
+                                            option(value="Swelling Of Stomach") swelling of stomach
+                                            option(value="Swelled Lymph Nodes") swelled lymph nodes
+                                            option(value="Malaise") malaise
+                                            option(value="Blurred And Distorted Vision") blurred and distorted vision
+                                            option(value="Phlegm") phlegm
+                                            option(value="Throat Irritation") throat irritation
+                                            option(value="Redness Of Eyes") redness of eyes
+                                            option(value="Sinus Pressure") sinus pressure
+                                            option(value="Runny Nose") runny nose
+                                            option(value="Congestion") congestion
+                                            option(value="Chest Pain") chest pain
+                                            option(value="Weakness In Limbs") weakness in limbs
+                                            option(value="Fast Heart Rate") fast heart rate
+                                            option(value="Pain During Bowel Movements") pain during bowel movements
+                                            option(value="Pain In Anal Region") pain in anal region
+                                            option(value="Bloody Stool") bloody stool
+                                            option(value="Irritation In Anus") irritation in anus
+                                            option(value="Neck Pain") neck pain
+                                            option(value="Dizziness") dizziness
+                                            option(value="Cramps") cramps
+                                            option(value="Dizziness") dizziness
+                                            option(value="Bruising") bruising
+                                            option(value="Obesity") obesity
+                                            option(value="Swollen Legs") swollen legs
+                                            option(value="Swollen Blood Vessels") swollen blood vessels
+                                            option(value="Puffy Face And Eyes") puffy face and eyes
+                                            option(value="Enlarged Thyroid") enlarged thyroid
+                                            option(value="Brittle Nails") brittle nails
+                                            option(value="Swollen Extremeties") swollen extremeties
+                                            option(value="Excessive Hunger") excessive hunger
+                                            option(value="Extra Marital Contacts") extra marital contacts
+                                            option(value="Drying And Tingling Lips") drying and tingling lips
+                                            option(value="Slurred Speech") slurred speech
+                                            option(value="Knee Pain") knee pain
+                                            option(value="Hip Joint Pain") hip joint pain
+                                            option(value="Muscle Weakness") muscle weakness
+                                            option(value="Stiff Neck") stiff neck
+                                            option(value="Swelling Joints") swelling joints
+                                            option(value="Movement Stiffness") movement stiffness
+                                            option(value="Spinning Movements") spinning movements
+                                            option(value="Unsteadiness") unsteadiness
+                                            option(value="Weakness Of One Body Side") weakness of one body side
+                                            option(value="Loss Of Smell") loss of smell
+                                            option(value="Bladder Discomfort") bladder discomfort
+                                            option(value="Foul Smell Of Urine") foul smell of urine
+                                            option(value="Continuous Feel Of Urine") continuous feel of urine
+                                            option(value="Passage Of Gases") passage of gases
+                                            option(value="Internal Itching") internal itching
+                                            option(value="Toxic Look(typhos)") toxic look (typhos)
+                                            option(value="Depression") depression
+                                            option(value="Irritability") irritability
+                                            option(value="Muscle Pain") muscle pain
+                                            option(value="Altered Sensorium") altered sensorium
+                                            option(value="Red Spots Over Body") red spots over body
+                                            option(value="Belly Pain") belly pain
+                                            option(value="Abnormal Menstruation") abnormal menstruation
+                                            option(value="Dischromic  Patches") dischromic  patches
+                                            option(value="Watering From Eyes") watering from eyes
+                                            option(value="Increased Appetite") increased appetite
+                                            option(value="Polyuria") polyuria
+                                            option(value="Family History") family history
+                                            option(value="Mucoid Sputum") mucoid sputum
+                                            option(value="Rusty Sputum") rusty sputum
+                                            option(value="Sack Sf Concentration") lack of concentration
+                                            option(value="Visual Disturbances") visual disturbances
+                                            option(value="Receiving Blood Transfusion") receiving blood transfusion
+                                            option(value="Receiving Unsterile Injections") receiving unsterile injections
+                                            option(value="Coma") coma
+                                            option(value="Stomach Bleeding") stomach bleeding
+                                            option(value="Distention Of Abdomen") distention of abdomen
+                                            option(value="History Of Alcohol Consumption") history of alcohol consumption
+                                            option(value="Fluid Overload") fluid overload
+                                            option(value="Blood In Sputum") blood in sputum
+                                            option(value="Prominent Veins On Calf") prominent veins on calf
+                                            option(value="Palpitations") palpitations
+                                            option(value="Painful Walking") painful walking
+                                            option(value="Pus Filled Pimples") pus filled pimples
+                                            option(value="Blackheads") blackheads
+                                            option(value="Scurring") scurring
+                                            option(value="Skin Peeling") skin peeling
+                                            option(value="Silver Like Dusting") silver like dusting
+                                            option(value="Silver Like Dusting") silver like dusting
+                                            option(value="Inflammatory Nails") inflammatory nails
+                                            option(value="Blister") blister
+                                            option(value="Red Sore Around Nose") red sore around nose
+                                            option(value="Yellow Crust Ooze") yellow crust ooze
+                                        
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <button class="btn btn-primary w-100 py-3" onclick="addsymptoms()">ADD</button>
+                                    </div>
+                                    <div class="col-12">
+                                    <input type="text" id='Symptomspre' class="form-control bg-light border-0" placeholder="Symptoms eg Itching,Skin Rash,Nodal Skin Eruptions" style="height: 55px;" disabled>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="text" id="yname" value=#{username} class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;" disabled>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <input type="email" id="yemail" value=#{email} class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;" disabled>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="date" id="date" data-target-input="nearest">
+                                            <input type="text" id="cdate" class="form-control bg-light border-0 datetimepicker-input" placeholder="Date" data-target="#date" data-toggle="datetimepicker" style="height: 55px;" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <div class="time" id="time" data-target-input="nearest">
+                                            <input type="text" id="ctime" class="form-control bg-light border-0 datetimepicker-input" placeholder="Time" data-target="#time" data-toggle="datetimepicker" style="height: 55px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <button class="btn btn-primary w-100 py-3" onclick="pridicate()">Check</button>
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <button class="btn btn-primary w-100 py-3" onclick="clear1()">Clear</button>
+                                    </div>
+                                </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-6 mb-5 mb-lg-0">
+                        <div class="mb-4">
+                            <h5 class="d-inline-block text-white text-uppercase border-bottom border-5">RESULT</h5>
+                            <h1 class="display-4" id="displayresult">This Predication system gives four results.</h1>
+                        </div>
+                        <p class="text-white mb-5"></p>
+                        <button class="btn btn-dark rounded-pill py-3 px-5 me-3" onclick="openappointment12();">Check Recommandation</button>
+                        <p class="btn btn-outline-dark rounded-pill py-3 px-5" onclick="openreadmorepopup();">Read More</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Predition  End -->
+
+        <!--EDIT PROFILE VIWE-->
+        <div class="container-fluid py-5" id="editpopmain" style="display:none">
+            dialog(id="myproeditui" style="width:600px;")
+                <div class="container py-5">
+                    <div class="row gx-5">
+                        <div class="col-12">
+                            <div class="bg-white text-center rounded p-5">
+                                <h1 class="mb-4">My Profile</h1>                        
+                                    <div class="row g-3">
+                                        
+                                        <div class="col-12 col-sm-6">
+                                            <input type="text" id="yname1" value=#{username} maxlength="60" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="email" id="yemail1" value=#{email} maxlength="80" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="number" id="mobileno1" maxlength="10" class="form-control bg-light border-0" placeholder="Mobile No." style="height: 55px;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="date" id="birthdate1" class="form-control bg-light border-0" placeholder="Birthdate" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="number" id="aadharno1" maxlength="15" class="form-control bg-light border-0" placeholder="Aadhar No." style="height: 55px;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="text" id="Age1" maxlength="3" class="form-control bg-light border-0" placeholder="AGE" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="text" id="bloodgroup1" maxlength="10" class="form-control bg-light border-0" placeholder="Blood Group" style="height: 55px;">
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <input type="text" id='Address' maxlength="200" class="form-control bg-light border-0" placeholder="Full Address" style="height: 55px;">
+                                        </div> 
+                                        <div class="col-12 col-sm-6">
+                                            label(for="secretcode") Secret Code.
+                                            <input type="text" id='secretcode' maxlength="10" class="form-control bg-light border-0" placeholder="Secret Code" style="height: 55px;" disabled>
+                                        </div> 
+                                         <div class="col-12 col-sm-6">
+                                            <button class="btn btn-primary w-100 py-3" onclick="secretcodegen()">Genarate</button>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <button class="btn btn-primary w-100 py-3" onclick="saveprofchange()">Save</button>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <button class="btn btn-primary w-100 py-3" onclick="close2()">Close</button>
+                                        </div>
+                                    
+                                    </div>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!--EDIT PROFILE VIWE-->
+
+
+        //-<div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+        <!-- Add Medical History View -->
+        <div class="container-fluid bg-primary my-5 py-5" id="medicineediteui" style="display:none;">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">Enter Medical History</h1>                        
+                            <div class="row g-3">
+                                <div class="col-12 col-sm-6">
+                                <input type="text" value=#{username} maxlength="60" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;" disabled>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="email" value=#{email} maxlength="80" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;" disabled>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="text" id="diseasename" maxlength="80" class="form-control bg-light border-0" placeholder="Disease Name" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="date" id="diseasestart" maxlength="80" class="form-control bg-light border-0" placeholder="Treatment Start" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="date" id="diseaseend" maxlength="80" class="form-control bg-light border-0" placeholder="Treatment End" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" id="clinic_hosp_name" maxlength="50" class="form-control bg-light border-0" placeholder="Clinic/Hospital Name" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" id="clinic_hosp_address" maxlength="80" class="form-control bg-light border-0" placeholder="Clinic/Hospital Address" style="height: 55px;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" id='symtoms' maxlength="200" class="form-control bg-light border-0" placeholder="Symtoms eg Fever,Headache" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <button class="btn btn-primary w-100 py-3" onclick="savediseaserecoreds()">Save</button>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <button class="btn btn-primary w-100 py-3" onclick="clear2()">Clear</button>
+                                </div>
+                            </div>
+                        <h1 class="mb-4">Enter Medicine Data</h1>                        
+                            <div class="row g-3">
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="text" id="Medicinename" maxlength="80" class="form-control bg-light border-0" placeholder="Medicine Name" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="date" id="MedicineStart" maxlength="80" class="form-control bg-light border-0" placeholder="Medicine Start" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="date" id="MedicineEnd" maxlength="80" class="form-control bg-light border-0" placeholder="Medicine End" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="text" id="time1" maxlength="10" class="form-control bg-light border-0" placeholder="Time eg 10:00:00, 23:59:59" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="text" id="time3" maxlength="10" class="form-control bg-light border-0" placeholder="Time eg 10:00:00, 23:59:59" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <input type="text" id="time2" maxlength="10" class="form-control bg-light border-0" placeholder="Time eg 10:00:00, 23:59:59" style="height: 55px;">
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    select(id="setremainder" name="")
+                                        option(value="No") Set Remainder  
+                                        option(value="Yes") Yes 
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <button class="btn btn-primary w-100 py-3" onclick="savemedicine()">Save</button>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <button class="btn btn-primary w-100 py-3" onclick="clear3()">Clear</button>
+                                </div>
+                                <div class="col-12" id="displaytbl" style="overflow: scroll !important;">
+                                
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <!--Medical View End-->   
+
+        <!--See Medical History-->
+        <div class="container-fluid bg-primary my-5 py-5" id="seemedicalui" style="display:none;">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5" style="max-width: 1000px;">
+                    <h1 class="mb-4">Medical History</h1>
+                    <div class="bg-white text-center rounded p-5" id="historytable" style="overflow: scroll;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END of See Medical History-->
+
+        <!--Medicine table popup--> 
+        <div class="container-fluid py-5" id="medicinepoptable" style="display:none">
+            dialog(id="medicineuipop" style="width:600px;")
+                <div class="container py-5">
+                    <div class="text-center mx-auto mb-5">
+                        <h1 class="mb-4">Medicine Table</h1>
+                        <div class="bg-white text-center rounded p-5" id="displaymedicinetable" style="overflow: scroll;">
+
+                        </div>
+                    </div>
+                    <div class="text-center mx-auto mb-5">      
+                        <button class="btn btn-primary w-100 py-3" onclick="close5()">Close</button>
+                    </div>
+                </div>    
+        </div>
+
+        <!--END Medical table popup-->
+
+        <div class="container-fluid py-5" id="remainderchangeop" style="display:none">
+            dialog(id="remainderpopup" style="width:800px; height=800px;")
+                <div class="container py-5">
+                    <div class="text-center mx-auto mb-5">
+                        <h1 class="mb-4">Medicine Table</h1>
+                        <div class="bg-white text-center rounded p-5" id="remainderchnage" style="overflow: scroll;">
+
+                        </div>
+                    </div>
+                    <div class="text-center mx-auto mb-5">      
+                        <button class="btn btn-primary w-100 py-3" onclick="close6()">Close</button>
+                    </div>
+                </div>    
+        </div>
+
+        <!--END Medical table popup-->
+
+        <!--Start Of Read ME-->
+        <div class="container-fluid py-5" id="readmoreUi" style="display:none">
+            dialog(id="readmorepop" style="width:800px; height=800px;")
+                <div class="container py-5">
+                    <div class="text-center mx-auto mb-5">
+                        <h1 class="mb-4">Info</h1>
+                        <div class="bg-white text-center rounded p-5" style="overflow-y: scroll;">
+                            <b>Result 1st:</b>| Random Forest is a popular machine learning algorithm that belongs to the supervised learning technique. It can be used for both Classification and Regression problems in ML. It is based on the concept of ensemble learning, which is a process of combining multiple classifiers to solve a complex problem and to improve the performance of the model.
+                            br
+                            <b>Result 2nd:</b>| The Naïve Bayes classifier is a supervised machine learning algorithm, which is used for classification tasks, like text classification. It is also part of a family of generative learning algorithms, meaning that it seeks to model the distribution of inputs of a given class or category.
+                            br
+                            <b>Result 3rd:</b>| Support Vector Machine or SVM is one of the most popular Supervised Learning algorithms, which is used for Classification as well as Regression problems. However, primarily, it is used for Classification problems in Machine Learning.
+                            br
+                            <b>Final Result:</b> Based on above three algorithm
+
+                        </div>
+                    </div>
+                    <div class="text-center mx-auto mb-5">      
+                        <button class="btn btn-primary w-100 py-3" onclick="close7()">Close</button>
+                    </div>
+                </div>    
+        </div>
+        <!--END Read Me-->
+        <div style="display:none">
+            input(type="hidden" id="hospitalidh")
+            input(type="hidden" id="hospitalnameh")
+        </div>
+        <!--END Medical table popup-->
+        <div class="container-fluid py-5" id="bookappointment1" style="display:none">
+            dialog(id="bookappointment" style="width:800px; height=800px;")
+                <div class="container py-5">   
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">Facility Info</h1> 
+                        <div class="row g-3" id="bookinfofacility" style="overflow:auto;">
+                        </diV>
+
+                    </div>
+                    
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">Book Appointment</h1> 
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input type="text" id="bookhospital" maxlength="50" class="form-control bg-light border-0" placeholder="Hospital Name" style="height: 55px;" disabled>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                select(id="drlist")
+                                    option(value="Select") Choose Dr.
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="date" id="bookdate" maxlength="80" class="form-control bg-light border-0" placeholder="App_Date" style="height: 55px;">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" id="booktime" maxlength="10" class="form-control bg-light border-0" placeholder="Time eg 10:00:00, 23:59:59" style="height: 55px;">
+                            </div>
+                           
+                            <div class="col-12 col-sm-6">
+                                <input type="number" id="bookphno" maxlength="10" value=#{mobile} class="form-control bg-light border-0" placeholder="Ph No." style="height: 55px;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input type="text" id="bookemail" maxlength="50" value=#{email} class="form-control bg-light border-0" placeholder="Email " style="height: 55px;">
+                            </div>
+                            
+                            <div class="col-12 col-sm-6">
+                                <button class="btn btn-primary w-100 py-3" onclick="applyforbook();">Save</button>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <button class="btn btn-primary w-100 py-3" onclick="clear4()">Clear</button>
+                            </div>
+                            <div class="col-12" id="displaytbl" style="overflow: scroll !important;">
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white text-center rounded p-5">      
+                        <button class="btn btn-primary w-100 py-3" onclick="close9()">Close</button>
+                    </div>
+                </div>    
+        </div>
+
+
+        <!--Get Appointment1 s-->
+        <div class="container-fluid bg-primary my-5 py-5" id="appointmentinfo" style="display:none">
+            <div class="container py-5">
+                <div class="text-center mx-auto mb-5" style="max-width: 1000px;">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">Get Appointment</h1> 
+                        
+                        <div class="row g-3">
+                            <div class="col-sm-3 col-6">
+                                <input type="text" id="cityfilter" maxlength="50" class="form-control bg-light border-0" placeholder="City Filter" style="height: 55px;">
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <button class="btn btn-primary w-100 py-3" onclick="gethospitallist('')">Search</button>
+                            </div>
+                            <div class="col-sm-3 col-6">
+                                <button class="btn btn-primary w-100 py-3" onclick="seehistappoint()">History</button>
+                            </div>
+                            <div class="col-12" id="appointmentinfo2">
+                            </div>
+                        </diV>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Get Appointmentq e-->
+
+        <!--See Booking History-->
+        <div class="container-fluid py-5" id="popuibooking" style="display:none">
+            dialog(id="historypopup" style="width:800px; height=800px;")
+                <div class="container py-5">
+                    <div class="text-center mx-auto mb-5">
+                        <h1 class="mb-4">My Appointment</h1>
+                        <div class="bg-white text-center rounded p-5" id="displayappointment" style="overflow: scroll;">
+
+                        </div>
+                    </div>
+                    <div class="text-center mx-auto mb-5">      
+                        <button class="btn btn-primary w-100 py-3" onclick="close10()">Close</button>
+                    </div>
+                </div>    
+        </div>
+        <!--See Booking History popup-->
+            
+block script 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    script(src="/static/js/login.js") 
+    script(src="/static/js/patientspage.js") 
+    //- <script src="lib/easing/easing.min.js"></script>
+    //- <script src="lib/waypoints/waypoints.min.js"></script>
+    //- <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    //- <script src="lib/tempusdominus/js/moment.min.js"></script>
+    //- <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    //- <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
