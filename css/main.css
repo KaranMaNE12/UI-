@@ -1,0 +1,37 @@
+.container {
+    width: 100%;
+    /*max-width: 420px; */
+    /* padding-left: 0%;
+    padding-right: 0%;
+    margin: auto; */
+    margin: 0px;
+    padding: 0px;
+}	
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+	display: block;
+}
+
+.model12{
+    display: none;
+    width: 100%;
+   /* overflow-x: auto;*/
+    /*overflow-y: auto; */
+    overflow: auto;
+    /* overscroll-behavior: contain; */
+    overflow-wrap: break-word;
+    align-content: center;	
+}
+.content {
+	
+	padding-top: 50px;
+	padding-left: 0;
+	
+}
+
+
+.header {
+	background-color: #f5f5f5;
+	margin-left: 20px;
+}
+
